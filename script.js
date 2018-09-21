@@ -1,12 +1,10 @@
-/**
- * Created by Maximilian Lloyd.
- */
+
 $(document).ready(function() {
 
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
     $("#encrypt").on("click", function() {
 
-        // Retreving the value fields
+        
         var input = $("#input");
         var key = $("#key").val();
         var PlainText = input.val();
@@ -19,15 +17,14 @@ $(document).ready(function() {
             var index = alphabet.indexOf(char);
             var cindex = index + key;
 
-            // If it can't find an empty space in the PlainText index is equal to -1. Thus it
-            // runs when the encryption process runs when it is not equal to 1
+           
             if (index !== -1) {
 
                 if (cindex >= 26) {
                     cindex = cindex - 26;
                 }
 
-                CipherText += alphabet.charAt(cindex); //      Insert key here when the function is fully implemented
+                CipherText += alphabet.charAt(cindex);
 
             } else {
                 if (CipherText === " ") {
@@ -47,7 +44,7 @@ $(document).ready(function() {
     var alphabet = "zyxwvutsrqponmlkjihgfedcba";
     $("#decrypt").on("click", function() {
 
-        // Retreving the value fields
+        
         var input = $("#input");
         var key = $("#key").val();
         var PlainText = input.val();
@@ -60,16 +57,14 @@ $(document).ready(function() {
             var index = alphabet.indexOf(char);
             var cindex = index + key;
 
-            // If it can't find an empty space in the PlainText index is equal to -1. Thus it
-            // runs when the encryption process runs when it is not equal to 1
+            
             if (index !== -1) {
 
                 if (cindex >= 26) {
                     cindex =  26-cindex;
                 }
 
-                CipherText += alphabet.charAt(cindex); //      Insert key here when the function is fully implemented
-
+                CipherText += alphabet.charAt(cindex); 
             } else {
                 if (CipherText === " ") {
                     CipherText += " ";
